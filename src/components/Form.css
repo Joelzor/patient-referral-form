@@ -1,0 +1,10 @@
+.form-container {
+  height: 380px;
+  width: 780px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.form-header {
+  height: 64px;
+}
