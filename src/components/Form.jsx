@@ -6,7 +6,9 @@ const Form = () => {
     <>
       <section className="form-container">
         <div className="form-header">
-          <div className="form-number">1</div>
+          <div className="form-number">
+            <p>1</p>
+          </div>
           <p>New Referral</p>
         </div>
       </section>
