@@ -22,8 +22,12 @@ const Header = () => {
         justifyContent="center"
         style={{ minHeight: 140 }}
       >
-        <Typography variant="h4">Patient Referral Form</Typography>
-        <Typography variant="h5">Hayes Valley Health San Francisco</Typography>
+        <Typography variant="h5" component="h1" fontSize="26px">
+          Patient Referral Form
+        </Typography>
+        <Typography variant="h6" fontSize="24px">
+          Hayes Valley Health San Francisco
+        </Typography>
       </Grid>
     </Box>
   );
