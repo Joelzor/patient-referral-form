@@ -45,8 +45,13 @@ const Form = () => {
             New Referral
           </Typography>
         </Grid>
-        <Grid container>
-          <Grid item>
+        <Grid
+          container
+          sx={{ padding: "12px 36px" }}
+          columnSpacing="24px"
+          rowSpacing="5px"
+        >
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <AccountCircleIcon
                 sx={{ color: "action.active", mr: 1, my: 0.5 }}
@@ -56,10 +61,11 @@ const Form = () => {
                 label="First Name"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <AccountCircleIcon
                 sx={{ color: "action.active", mr: 1, my: 0.5 }}
@@ -69,10 +75,11 @@ const Form = () => {
                 label="Last Name"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <CakeIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
               <TextField
@@ -80,10 +87,11 @@ const Form = () => {
                 label="Date of Birth"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <TranslateIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
               <TextField
@@ -91,10 +99,11 @@ const Form = () => {
                 label="Contact Language"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <LocalPhoneIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
               <TextField
@@ -102,10 +111,11 @@ const Form = () => {
                 label="Phone"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
               <EmailIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
               <TextField
@@ -113,22 +123,25 @@ const Form = () => {
                 label="Email"
                 variant="standard"
                 required
+                sx={{ width: "100%" }}
               />
             </Box>
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
             <TextField
               id="standard-basic"
               label="Address"
               variant="standard"
               required
+              sx={{ width: "100%" }}
             />
           </Grid>
-          <Grid item>
+          <Grid item xs={12}>
             <TextField
               id="standard-basic"
               label="Notes/Reason"
               variant="standard"
+              sx={{ width: "100%" }}
             />
           </Grid>
         </Grid>
