@@ -3,19 +3,16 @@ import "./Form.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import TextField from "@mui/material/TextField";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import CakeIcon from "@mui/icons-material/Cake";
+import TranslateIcon from "@mui/icons-material/Translate";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import EmailIcon from "@mui/icons-material/Email";
 
 const Form = () => {
   return (
     <>
-      {/* <section className="form-container">
-        <div className="form-header">
-          <div className="form-number">
-            <p>1</p>
-          </div>
-          <p>New Referral</p>
-        </div>
-      </section> */}
-
       <Box
         sx={{
           width: "780px",
@@ -47,6 +44,93 @@ const Form = () => {
           <Typography variant="h5" fontSize="20px" letterSpacing="1px">
             New Referral
           </Typography>
+        </Grid>
+        <Grid container>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <AccountCircleIcon
+                sx={{ color: "action.active", mr: 1, my: 0.5 }}
+              />
+              <TextField
+                id="input-with-sx"
+                label="First Name"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <AccountCircleIcon
+                sx={{ color: "action.active", mr: 1, my: 0.5 }}
+              />
+              <TextField
+                id="input-with-sx"
+                label="Last Name"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <CakeIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+              <TextField
+                id="input-with-sx"
+                label="Date of Birth"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <TranslateIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+              <TextField
+                id="input-with-sx"
+                label="Contact Language"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <LocalPhoneIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+              <TextField
+                id="input-with-sx"
+                label="Phone"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+              <EmailIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+              <TextField
+                id="input-with-sx"
+                label="Email"
+                variant="standard"
+                required
+              />
+            </Box>
+          </Grid>
+          <Grid item>
+            <TextField
+              id="standard-basic"
+              label="Address"
+              variant="standard"
+              required
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="standard-basic"
+              label="Notes/Reason"
+              variant="standard"
+            />
+          </Grid>
         </Grid>
       </Box>
     </>
