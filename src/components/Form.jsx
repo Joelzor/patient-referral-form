@@ -10,7 +10,16 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 
-const Form = () => {
+const Form = ({ referral, setReferral }) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setReferral({
+      ...referral,
+      [name]: value,
+    });
+  };
+
   return (
     <>
       <Box
@@ -50,6 +59,7 @@ const Form = () => {
           sx={{ padding: "12px 36px" }}
           columnSpacing="24px"
           rowSpacing="5px"
+          component="form"
         >
           <Grid item xs={6}>
             <Box sx={{ display: "flex", alignItems: "flex-end" }}>
@@ -62,6 +72,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="firstName"
+                value={referral.firstName}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -76,6 +89,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="lastName"
+                value={referral.lastName}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -88,6 +104,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="dateOfBirth"
+                value={referral.dateOfBirth}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -100,6 +119,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="contactLanguage"
+                value={referral.contactLanguage}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -112,6 +134,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="phone"
+                value={referral.phone}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -124,6 +149,9 @@ const Form = () => {
                 variant="standard"
                 required
                 sx={{ width: "100%" }}
+                name="email"
+                value={referral.email}
+                onChange={handleChange}
               />
             </Box>
           </Grid>
@@ -133,7 +161,10 @@ const Form = () => {
               label="Address"
               variant="standard"
               required
+              name="address"
               sx={{ width: "100%" }}
+              value={referral.address}
+              onChange={handleChange}
             />
           </Grid>
           <Grid item xs={12}>
@@ -142,6 +173,9 @@ const Form = () => {
               label="Notes/Reason"
               variant="standard"
               sx={{ width: "100%" }}
+              name="notes"
+              value={referral.notes}
+              onChange={handleChange}
             />
           </Grid>
         </Grid>

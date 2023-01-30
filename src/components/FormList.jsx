@@ -1,19 +1,34 @@
 import React from "react";
+import { useState } from "react";
 import Form from "./Form";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { setRef } from "@mui/material";
+
+const referralData = {
+  firstName: "",
+  lastName: "",
+  dateOfBirth: "",
+  contactLanguage: "",
+  phone: "",
+  email: "",
+  address: "",
+  notes: "",
+};
 
 const FormList = () => {
+  const [referral, setReferral] = useState(referralData);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(referral);
+    setReferral(referralData);
+  };
+
   return (
-    // <main className="formlist">
-    //   <div className="formlist-heading">
-    //     <h2 className="tertiary-heading">Referral Patients</h2>
-    //     <p>You can add up to five patients at a time</p>
-    //   </div>
-    //   <Form />
-    // </main>
     <Box
       sx={{
         backgroundColor: "#cde7ed",
@@ -28,7 +43,7 @@ const FormList = () => {
             You can add up to five patients at a time
           </Typography>
         </Box>
-        <Form />
+        <Form referral={referral} setReferral={setReferral} />
         <Box textAlign="center">
           <Button sx={{ color: "#0B2B5B" }}>+ add another patient</Button>
         </Box>
@@ -42,6 +57,7 @@ const FormList = () => {
               borderRadius: "16px",
               fontSize: "14px",
             }}
+            onClick={handleSubmit}
           >
             send referrals
           </Button>
