@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./Form.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -10,7 +11,8 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import EmailIcon from "@mui/icons-material/Email";
 
-const Form = ({ referral, setReferral }) => {
+const Form = ({ referral, setReferral, patientNumber, show, setShow }) => {
+  const [headerColour, setHeaderColour] = useState("#25A575");
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -18,6 +20,25 @@ const Form = ({ referral, setReferral }) => {
       ...referral,
       [name]: value,
     });
+  };
+
+  React.useEffect(() => {
+    colourHandler();
+  }, []);
+
+  const colourHandler = () => {
+    if (patientNumber === 2) {
+      setHeaderColour("#2595A5");
+    }
+    if (patientNumber === 3) {
+      setHeaderColour("#3A719B");
+    }
+    if (patientNumber === 4) {
+      setHeaderColour("#254B7A");
+    }
+    if (patientNumber === 5) {
+      setHeaderColour("#142B58");
+    }
   };
 
   return (
@@ -36,7 +57,7 @@ const Form = ({ referral, setReferral }) => {
             sx={{
               height: "64px",
               width: "40px",
-              backgroundColor: "#25A575",
+              backgroundColor: headerColour,
               color: "#fff",
               fontSize: "26px",
             }}
@@ -47,7 +68,7 @@ const Form = ({ referral, setReferral }) => {
               justifyContent="center"
               minHeight="64px"
             >
-              1
+              {patientNumber}
             </Grid>
           </Box>
           <Typography variant="h5" fontSize="20px" letterSpacing="1px">

@@ -54,7 +54,14 @@ const FormList = () => {
         </Box>
         {patients.map((item, index) => {
           return (
-            <Form key={index} referral={referral} setReferral={setReferral} />
+            <Form
+              key={index}
+              referral={referral}
+              setReferral={setReferral}
+              patientNumber={index + 1}
+              show={show}
+              setShow={setShow}
+            />
           );
         })}
         {/* <Form referral={referral} setReferral={setReferral} />; */}
