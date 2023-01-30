@@ -27,7 +27,7 @@ const Form = ({ referral, setReferral }) => {
           width: "780px",
           height: "380px",
           backgroundColor: "#fff",
-          margin: "0 auto",
+          margin: "20px auto",
           color: "#3A719B",
         }}
       >

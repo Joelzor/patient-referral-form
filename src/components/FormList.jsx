@@ -20,12 +20,21 @@ const referralData = {
 
 const FormList = () => {
   const [referral, setReferral] = useState(referralData);
+  const [patients, setPatients] = useState([1]);
+  const [data, setData] = useState([]);
+  const [show, setShow] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(referral);
+    setData([...data, referral]);
     setReferral(referralData);
+  };
+
+  const addPatient = () => {
+    if (patients.length === 5) return;
+
+    setPatients([...patients, 1]);
   };
 
   return (
@@ -43,9 +52,16 @@ const FormList = () => {
             You can add up to five patients at a time
           </Typography>
         </Box>
-        <Form referral={referral} setReferral={setReferral} />
+        {patients.map((item, index) => {
+          return (
+            <Form key={index} referral={referral} setReferral={setReferral} />
+          );
+        })}
+        {/* <Form referral={referral} setReferral={setReferral} />; */}
         <Box textAlign="center">
-          <Button sx={{ color: "#0B2B5B" }}>+ add another patient</Button>
+          <Button sx={{ color: "#0B2B5B" }} onClick={addPatient}>
+            + add another patient
+          </Button>
         </Box>
         <Box textAlign="center" padding="32px">
           <Button
